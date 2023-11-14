@@ -161,5 +161,23 @@ class TestMiClase(unittest.TestCase):
         resultado = objeto.VerificaListaCanciones(["Cancion1", "Cancion2", None])
         self.assertEqual(resultado,False)
 
+# Pruebas unitarias del nuevo módulo
+
+#Método 6
+    
+    def testEncuentraElementoEnLista(self):
+        # Verifica que Encuentra funcione correctamente cuando el elemento está en la lista
+        lista = [2, 6, 8]
+        elemento = 6
+        resultado = self.miObjeto.Encuentra(lista, elemento)
+        self.assertEqual(resultado, elemento)
+
+    def testEncuentraNone(self):
+        # Verifica que Encuentra retorne None cuando la lista contiene elementos no enteros
+        lista = [2, 0.6 , 8]
+        elemento = 8
+        resultado = self.miObjeto.Encuentra(lista, elemento)
+        self.assertIsNone(resultado)
+
 if __name__ == '__main__':
     unittest.main()
