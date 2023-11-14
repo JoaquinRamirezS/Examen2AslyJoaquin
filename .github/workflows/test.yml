@@ -35,3 +35,9 @@ jobs:
     - name: Run Tests
       run: |
         pytest test_Examen2.py
+    - name: Run Tests with Intentional Failure
+      run: |
+        # This job intentionally modify the test behavior to make it fail
+        echo "def test_example():\n    assert False  # Intentional failure" > modified_test_Examen2.py
+        pytest modified_test_Examen2.py
+
